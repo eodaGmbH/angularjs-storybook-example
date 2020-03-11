@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "strict": true,
+    "sourceMap": false,
+    "allowJs": true,
+    "outDir": "dist",
+    "lib": ["es2017", "dom"],
+    "typeRoots": ["./@types", "../../node_modules/@types", "./node_modules/@types"]
+  },
+  "include": ["@types/**/*", "src/**/*"]
+}
