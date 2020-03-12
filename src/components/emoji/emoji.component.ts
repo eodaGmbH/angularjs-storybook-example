@@ -1,19 +1,18 @@
-import { IOnInit } from 'angular';
+import { IOnChanges } from 'angular';
 
-class EmojiComponentController implements IOnInit {
+class EmojiComponentController implements IOnChanges {
   emoji?: string;
-  icon = '🏠';
 
-  $onInit() {
-    if (this.emoji) {
-      this.icon = this.emoji;
+  $onChanges() {
+    if (!this.emoji) {
+      this.emoji = '🏠';
     }
   }
 }
 
 export const EmojiComponent = {
   controller: EmojiComponentController,
-  template: `<span ng-bind="$ctrl.icon"></span>`,
+  template: `<span ng-bind="$ctrl.emoji"></span>`,
   bindings: {
     emoji: '@',
   },
