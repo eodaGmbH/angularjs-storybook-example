@@ -6,24 +6,25 @@ import * as angular from 'angular';
 import * as ngAnimate from 'angular-animate';
 
 import { EmojiComponent, EmojiComponentName } from './emoji/emoji.component';
-import { CounterComponentName, CounterComponent } from './counter/counter.component';
-import { helloDirective, helloDirectiveName } from '../directives/hello/hello.directive';
-import { ButtonComponentName, ButtonComponent } from './button/button.component';
+import {
+  CounterComponentName,
+  CounterComponent
+} from './counter/counter.component';
+import {
+  helloDirective,
+  helloDirectiveName
+} from '../directives/hello/hello.directive';
+import {
+  ButtonComponentName,
+  ButtonComponent
+} from './button/button.component';
 import { DateComponentName, DateComponent } from './date/date.component';
 import { FadeComponent, FadeComponentName } from './fade/fade.component';
 
-var rootElement = angular.element(document);
-
-export const globalComponentsModule = angular
-  .module('hotReloadDemo.components', [ngAnimate])
-  .provider({
-    $rootElement: function () {
-      // @ts-ignore
-      this.$get = function() {
-        return rootElement;
-      };
-    },
-  });
+export const globalComponentsModule = angular.module(
+  'hotReloadDemo.components',
+  [ngAnimate]
+);
 
 // Components
 globalComponentsModule.component(ButtonComponentName, ButtonComponent);
